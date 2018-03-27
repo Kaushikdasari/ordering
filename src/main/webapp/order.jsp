@@ -201,11 +201,7 @@ function checkfunc()
   } else {
     term.style.display = "none";
   }
-}
-function highlight(id) {
-    var element = document.getElementById(id);
-    element.class = (element.class == "opacityClicked") ? "opacityDefault" : "opacityClicked";
-}
+
 </script>
      
 </body>
