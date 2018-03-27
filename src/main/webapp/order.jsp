@@ -12,19 +12,19 @@ body {font-family: Arial;}
 /* Style the tab */
 .tab {
    
-    border: 1px solid #ccc;
-    background-color: #f1f1f1;
+    border: 1px solid white;
+    background-color: inherit;
 }
 
 /* Style the buttons inside the tab */
 .tab button {
-    background-color: inherit;
+    background-color: #f4f7f8;
     float: middle;
     outline: none;
     cursor: pointer;
     padding: 14px 16px;
     transition: 0.3s;
-    font-size: 17px;
+    font-size: 20px;
 }
 
 /* Change background color of buttons on hover */
@@ -44,12 +44,7 @@ body {font-family: Arial;}
     border: 1px solid #ccc;
     border-top: none;
 }
-.opacityClicked{
-  background:#1abc9c;
-}
-.opacityDefault{
-  background:rgba(255,0,0,0.6);
-}
+
 </style>
 </head>
 <link rel="stylesheet" type="text/css" href="common.css"></link>
@@ -62,12 +57,12 @@ body {font-family: Arial;}
 <body>
 
 <div class="tab" style="display:block" align="center">
-  <button id="personal" class="tablinks">Personal Information</button>
+  <button id="personal"  class="tablinks">Personal Information</button>
   <button id="billing" class="tablinks">Billing Information</button>
   <button id="review" class="tablinks" >Order Review</button>
   <button id="confirm" class="tablinks">Order Confirmation</button>
 </div>
-<div id="Personal"   style="display:block;padding:20" class="tabcontent">
+<div id="Personal"  style="display:block;padding:20" class="tabcontent">
 <div id ="info" >
 <p><h2>Personal Info</h2>
 <ul><li>Use the form below to enroll in a plan. You'll be able to review your information and make changes before you submit your completed form.</li>
@@ -90,7 +85,7 @@ body {font-family: Arial;}
 <input type="text" name="field1" placeholder="State*">
 <input type="text" name="field1" placeholder="zip*">
 <p><input type="button" onclick="showbilling()" value="Continue to Billing"  style="font-size:unset" />&nbsp;
-<input type="button" onclick="showplans()" value="Previous" style="font-size:unset"/></p>
+<input type="button" onclick="href="http://ec2-18-188-79-5.us-east-2.compute.amazonaws.com:8080/main.jsp"" value="Back To Plans" style="font-size:unset"/></p>
 </form>
 </div>
 </div>
@@ -141,7 +136,8 @@ You will receive an email confirmation shortly at@insurance.com<br/>
 <br/>
 Print Receipt</p>
 <div id="plans " class ="form-style-5" style="height:10%;width:100%" align="center">
-<input type="button"  onclick="showplans()" value="Continue Shopping" style="font-size:unset"/>
+<input type="button"  onclick="href="http://ec2-18-188-79-5.us-east-2.compute.amazonaws.com:8080/main.jsp""  value="Continue Shopping" style="font-size:unset"/>&nbsp;
+<input type="button"  onclick="showplans()" value="Create Account" style="font-size:unset"/>
 </form>
 </fieldset>
 </div>
@@ -194,6 +190,7 @@ function showplans()
 	document.getElementById("Billing").style.display="none";
 	document.getElementById("Revieworder").style.display="none";
 	document.getElementById("Confirmorder").style.display="none";
+	
 }
 function checkfunc()
 {
