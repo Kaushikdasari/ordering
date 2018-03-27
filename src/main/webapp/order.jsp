@@ -201,7 +201,7 @@ function checkfunc()
   } else {
     term.style.display = "none";
   }
-
+}
 </script>
      
 </body>
