@@ -210,4 +210,4 @@ function checkfunc()
 	<div id="footer"  style="height:5%;width:100%">
 		<jsp:include page="footer.jsp" />
 	</div>
-</div> 
+</div>  
