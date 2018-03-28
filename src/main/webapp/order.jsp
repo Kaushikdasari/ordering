@@ -85,7 +85,7 @@ body {font-family: Arial;}
 <input type="text" name="field1" placeholder="State*">
 <input type="text" name="field1" placeholder="zip*">
 <p><input type="button" onclick="showbilling()" value="Continue to Billing"  style="font-size:unset" />&nbsp;
-<input type="button" onclick="href="http://ec2-18-188-79-5.us-east-2.compute.amazonaws.com:8080/main.jsp"" value="Back To Plans" style="font-size:unset"/></p>
+<input type="button" onclick="href='http://ec2-18-188-79-5.us-east-2.compute.amazonaws.com:8080/main.jsp';" value="Back To Plans" style="font-size:unset"/></p>
 </form>
 </div>
 </div>
@@ -136,7 +136,7 @@ You will receive an email confirmation shortly at@insurance.com<br/>
 <br/>
 Print Receipt</p>
 <div id="plans " class ="form-style-5" style="height:10%;width:100%" align="center">
-<input type="button"  onclick="href="http://ec2-18-188-79-5.us-east-2.compute.amazonaws.com:8080/main.jsp""  value="Continue Shopping" style="font-size:unset"/>&nbsp;
+<input type="button"  onclick="location.href='http://ec2-18-188-79-5.us-east-2.compute.amazonaws.com:8080/main.jsp';"  value="Continue Shopping" style="font-size:unset"/>&nbsp;
 <input type="button"  onclick="showplans()" value="Create Account" style="font-size:unset"/>
 </form>
 </fieldset>
