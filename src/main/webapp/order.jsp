@@ -141,7 +141,7 @@ You will receive an email confirmation shortly at@insurance.com<br/>
 Print Receipt</p>
 <div id="plans " class ="form-style-5" style="height:10%;width:100%" align="center">
 <input type="button"  onclick="location.href='http://ec2-18-188-79-5.us-east-2.compute.amazonaws.com:8080/main.jsp';"  value="Continue Shopping" style="font-size:unset"/>&nbsp;
-<input type="button"  onclick="location.href='http://ec2-18-188-79-5.us-east-2.compute.amazonaws.com:8080/main.jsp';" value="Create Account" style="font-size:unset"/>
+<input type="button"  onclick="location.href='http://ec2-18-216-130-88.us-east-2.compute.amazonaws.com:8080/mainprofile.jsp';" value="Create Account" style="font-size:unset"/>
 </form>
 </fieldset>
 </div>
