@@ -1,5 +1,4 @@
 <style>
-
 * {
     margin:0;
     padding:0;
@@ -37,6 +36,10 @@ body {font-family: Arial;}
     background-color: #1abc9c;
 }
 
+#personal #billing #review #confirm button.active/current{
+class="ui active button";
+}
+
 /* Style the tab content */
 .tabcontent {
     display: none;
@@ -47,20 +50,21 @@ body {font-family: Arial;}
 
 </style>
 </head>
-<link rel="stylesheet" type="text/css" href="common.css"></link>
+<link rel="stylesheet" type="text/css"
+	href="http://ec2-18-188-27-184.us-east-2.compute.amazonaws.com:8080/common.css"></link>
 <div>
 	<div id="header" style="height:18%;width:100%">
-		<jsp:include page="header.jsp" />
+		<iframe src="http://ec2-18-188-27-184.us-east-2.compute.amazonaws.com:8080/header.jsp" width="100%" height="100%"></iframe>
 	</div>
 	
 	<div id="body" style="height:77%;width:100%;overflow:scroll;">
 <body>
 
 <div class="tab" style="display:block" align="center">
-  <button id="personal"  class="tablinks">Personal Information</button>
-  <button id="billing" class="tablinks">Billing Information</button>
-  <button id="review" class="tablinks" >Order Review</button>
-  <button id="confirm" class="tablinks">Order Confirmation</button>
+  <button id="personal" class="ui active button" >Personal Information</button>
+  <button id="billing"  >Billing Information</button>
+  <button id="review"   >Order Review</button>
+  <button id="confirm" >Order Confirmation</button>
 </div>
 <div id="Personal"  style="display:block;padding:20" class="tabcontent">
 <div id ="info" >
@@ -90,7 +94,7 @@ body {font-family: Arial;}
 </div>
 </div>
 
-<div id="Billing" style="display:none" class="tabcontent form-style-5 .Personal Information button.active">
+<div id="Billing" style="display:none" class="form-style-5">
 <form>
 <fieldset>
 <legend><span class="number">1</span> Billing Type</legend>
@@ -110,7 +114,7 @@ body {font-family: Arial;}
 </form>
 </div>
 
-<div id="Revieworder" style="display:none" class="tabcontent form-style-5 button.active">
+<div id="Revieworder" style="display:none" class=" form-style-5 button.active">
  <form>
 <fieldset>
 <legend><span class="number">1</span> Insurance Type</legend>
@@ -137,7 +141,7 @@ You will receive an email confirmation shortly at@insurance.com<br/>
 Print Receipt</p>
 <div id="plans " class ="form-style-5" style="height:10%;width:100%" align="center">
 <input type="button"  onclick="location.href='http://ec2-18-188-79-5.us-east-2.compute.amazonaws.com:8080/main.jsp';"  value="Continue Shopping" style="font-size:unset"/>&nbsp;
-<input type="button"  onclick="location.href='http://ec2-18-216-130-88.us-east-2.compute.amazonaws.com:8080/mainprofile.jsp#id1';" value="Create Account" style="font-size:unset"/>
+<input type="button"  onclick="location.href='http://ec2-18-188-79-5.us-east-2.compute.amazonaws.com:8080/main.jsp';" value="Create Account" style="font-size:unset"/>
 </form>
 </fieldset>
 </div>
@@ -167,6 +171,8 @@ function showbilling()
 {
 	document.getElementById("Personal").style.display="none";
 	document.getElementById("Billing").style.display="block";
+	var element=document.getElementById("billing");
+	element.classList.add("ui active button");
 	document.getElementById("Revieworder").style.display="none";
 	document.getElementById("Confirmorder").style.display="none";
 }
@@ -208,6 +214,6 @@ function checkfunc()
 
 	</div>
 	<div id="footer"  style="height:5%;width:100%">
-		<jsp:include page="footer.jsp" />
+		<iframe src="http://ec2-18-188-27-184.us-east-2.compute.amazonaws.com:8080/footer.jsp" width="100%" height="100%"></iframe>
 	</div>
-</div>  
+</div> 
