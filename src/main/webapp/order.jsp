@@ -79,15 +79,16 @@ class="ui active button";
 <fieldset>
 <legend> Personal Information</legend>
 
-<input type="text" name="field1" placeholder="FirstName *">
-<input type="text" name="field1" placeholder="LastName *">
-<input type="text" name="field1" placeholder="Date Of Birth*">
-<input type="email" name="field2" placeholder="Email *">
-<input type="text" name="field1" placeholder="Address Lane1 *">
-<input type="text" name="field1" placeholder="Address Lane2 *">
-<input type="text" name="field1" placeholder="City*">
-<input type="text" name="field1" placeholder="State*">
-<input type="text" name="field1" placeholder="zip*">
+<input type="text" name="firstName" placeholder="FirstName *">
+<input type="text" name="lastNmae" placeholder="LastName *">
+<input type="text" pattern='(0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])[- /.](19|20)\d\d' name="field1" placeholder="Date Of Birth* (Format: MM/DD/YYYY)">
+<input type="email" name="email" placeholder="Email *">
+<input type="text" pattern='[\+]\d{2}[\(]\d{2}[\)]\d{4}[\-]\d{4}' name="phoneNo" placeholder="PhoneNo* (Format: +1(999)-999-9999)">
+<input type="text" name="address1" placeholder="Address Lane1 *">
+<input type="text" name="address2" placeholder="Address Lane2 *">
+<input type="text" name="city" placeholder="City*">
+<input type="text" name="state" placeholder="State*">
+<input type="text" name="zip" placeholder="zip*">
 <p><input type="button" onclick="showbilling()" value="Continue to Billing"  style="font-size:unset" />&nbsp;
 <input type="button" onclick="location.href='http://ec2-18-188-79-5.us-east-2.compute.amazonaws.com:8080/main.jsp';" value="Back To Plans" style="font-size:unset"/></p>
 </form>
@@ -98,17 +99,17 @@ class="ui active button";
 <form>
 <fieldset>
 <legend><span class="number">1</span> Billing Type</legend>
-<input type="text" name="field1" placeholder="Debit/CreditCardNo *">
-<input type="text" name="field1" placeholder="ExpiryDate*">
-<input type="text" name="field1" placeholder="Cvv*">
+<input type="text" pattern='[0-9]{13,16}' name="cardNo" placeholder="Debit/CreditCardNo *">
+<input type="text" pattern='^((0[1-9])|(1[0-2]))/([0-9]{4})$' name="expiryDate" placeholder="ExpiryDate* (Format: MM/YYYY)">
+<input type="text" pattern='^[0-9]{3,4}$'  name="cvv" placeholder="Cvv*">
 <legend><span class="number">2</span> Billing Information</legend>
-<input type="text" name="field1" placeholder="CardHolderName*">
-<input type="email" name="field2" placeholder="CardHolderEmail *">
-<input type="text" name="field1" placeholder="CardHolderAddress Lane1 *">
-<input type="text" name="field1" placeholder="CardHolderAddress Lane2 *">
-<input type="text" name="field1" placeholder="City*">
-<input type="text" name="field1" placeholder="State*">
-<input type="text" name="field1" placeholder="zip*">
+<input type="text" name="nameOnCard" placeholder="CardHolderName*">
+<input type="email" name="billingEmail" placeholder="CardHolderEmail *">
+<input type="text" name="billingAddress1" placeholder="CardHolderAddress Lane1 *">
+<input type="text" name="billingAddress2" placeholder="CardHolderAddress Lane2 *">
+<input type="text" name="billingCity" placeholder="City*">
+<input type="text" name="billingState" placeholder="State*">
+<input type="text" name="billingZip" placeholder="zip*">
 <input type="button" onclick="showreview()" value="ReviewOrder and Pay"style="font-size:unset" />&nbsp;
 <input type="button" onclick="showpersonal()" value="Previous"style="font-size:unset" />
 </form>
@@ -139,9 +140,9 @@ class="ui active button";
 You will receive an email confirmation shortly at@insurance.com<br/>
 <br/>
 Print Receipt</p>
-<div id="plans " class ="form-style-5" style="height:10%;width:100%" align="center">
+<div id="plans " class ="form-style-5"  align="center">
 <input type="button"  onclick="location.href='http://ec2-18-188-79-5.us-east-2.compute.amazonaws.com:8080/main.jsp';"  value="Continue Shopping" style="font-size:unset"/>&nbsp;
-<input type="button"  onclick="location.href='http://ec2-18-216-130-88.us-east-2.compute.amazonaws.com:8080/mainprofile.jsp';" value="Create Account" style="font-size:unset"/>
+<input type="button"  onclick="location.href='http://ec2-18-188-27-184.us-east-2.compute.amazonaws.com:8080/uneego.jsp';" value="Create Account" style="font-size:unset"/>
 </form>
 </fieldset>
 </div>
