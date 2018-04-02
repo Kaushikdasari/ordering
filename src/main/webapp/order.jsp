@@ -75,20 +75,20 @@ class="ui active button";
 	</p>
 </div>
 <div id ="info" class="form-style-5">
-  <form>
+  <form action="personalInfo">
 <fieldset>
 <legend> Personal Information</legend>
 
 <input type="text" name="firstName" placeholder="FirstName *">
-<input type="text" name="lastNmae" placeholder="LastName *">
-<input type="text" pattern='(0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])[- /.](19|20)\d\d' name="field1" placeholder="Date Of Birth* (Format: MM/DD/YYYY)">
+<input type="text" name="lastName" placeholder="LastName *">
+<input type="text" pattern='(0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])[- /.](19|20)\d\d' name="dob" placeholder="Date Of Birth* (Format: MM/DD/YYYY)">
 <input type="email" name="email" placeholder="Email *">
 <input type="text" pattern='[\+]\d{2}[\(]\d{2}[\)]\d{4}[\-]\d{4}' name="phoneNo" placeholder="PhoneNo* (Format: +1(999)-999-9999)">
 <input type="text" name="address1" placeholder="Address Lane1 *">
 <input type="text" name="address2" placeholder="Address Lane2 *">
 <input type="text" name="city" placeholder="City*">
 <input type="text" name="state" placeholder="State*">
-<input type="text" name="zip" placeholder="zip*">
+<input type="text" name="zip" placeholder="Zip*">
 <p><input type="button" onclick="showbilling()" value="Continue to Billing"  style="font-size:unset" />&nbsp;
 <input type="button" onclick="location.href='http://ec2-18-188-79-5.us-east-2.compute.amazonaws.com:8080/main.jsp';" value="Back To Plans" style="font-size:unset"/></p>
 </form>
@@ -96,7 +96,7 @@ class="ui active button";
 </div>
 
 <div id="Billing" style="display:none" class="form-style-5">
-<form>
+<form action="billing">
 <fieldset>
 <legend><span class="number">1</span> Billing Type</legend>
 <input type="text" pattern='[0-9]{13,16}' name="cardNo" placeholder="Debit/CreditCardNo *">
@@ -116,10 +116,12 @@ class="ui active button";
 </div>
 
 <div id="Revieworder" style="display:none" class=" form-style-5 button.active">
- <form>
+ <form action="review">
 <fieldset>
 <legend><span class="number">1</span> Insurance Type</legend>
+
 <legend><span class="number">2</span> Personal Information</legend>
+
 <legend><span class="number">3</span> Billing Information</legend>
 <input type="checkbox" id="mycheck" onclick="checkfunc()">I agree to Terms Of Condition</label>
 <div id="term" style="display:none">
@@ -148,18 +150,9 @@ Print Receipt</p>
 </div>
 </div>
 <script>
-function openCity(evt, cityName) {
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-    document.getElementById(cityName).style.display = "block";
-    evt.currentTarget.className += " active";
+function openCity(id) {
+   
+    id.currentTarget.className += " active";
 }
 function showpersonal()
 {
@@ -172,8 +165,7 @@ function showbilling()
 {
 	document.getElementById("Personal").style.display="none";
 	document.getElementById("Billing").style.display="block";
-	var element=document.getElementById("billing");
-	element.classList.add("ui active button");
+	billing.className+="active";
 	document.getElementById("Revieworder").style.display="none";
 	document.getElementById("Confirmorder").style.display="none";
 }
@@ -182,6 +174,7 @@ function showreview()
 	document.getElementById("Personal").style.display="none";
 	document.getElementById("Billing").style.display="none";
 	document.getElementById("Revieworder").style.display="block";
+	review.className+="active";
 	document.getElementById("Confirmorder").style.display="none";
 }
 function showConfirmOrder()
@@ -190,15 +183,9 @@ function showConfirmOrder()
 	document.getElementById("Billing").style.display="none";
 	document.getElementById("Revieworder").style.display="none";
 	document.getElementById("Confirmorder").style.display="block";
+	confirm.className+="active";
 }
-function showplans()
-{
-	document.getElementById("Personal").style.display="none";
-	document.getElementById("Billing").style.display="none";
-	document.getElementById("Revieworder").style.display="none";
-	document.getElementById("Confirmorder").style.display="none";
-	
-}
+
 function checkfunc()
 {
 	var checkBox = document.getElementById("mycheck");
